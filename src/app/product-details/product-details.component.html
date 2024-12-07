@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div *ngIf="product" class="image">
+    <img
+      mat-card-image
+      [src]="'http://localhost:3000/' + product.image"
+      alt="Product Image"
+      class="product-image"
+    />
+  </div>
+
+  <div *ngIf="product" class="product_details">
+    <mat-card-content>
+      <!-- Product Name -->
+      <h3 mat-card-title class="product-name">
+        {{ product.product_name }}
+      </h3>
+      <!-- Product Price -->
+      <p class="product-price">
+        ₹ {{ product.actual_price }}.00 INR<br />
+        <span class="original-price">₹{{ product.price }}.00</span>
+      </p>
+    </mat-card-content>
+    <hr />
+    <h3 class="heading">Quantity</h3>
+    <div class="quantity-selector">
+      <div class="quantity-button" (click)="decreaseQuantity()">
+        <mat-icon>remove</mat-icon>
+      </div>
+      <div class="quantity-value">{{ selectedQuantity }}</div>
+      <div class="quantity-button" (click)="increaseQuantity()">
+        <mat-icon>add</mat-icon>
+      </div>
+    </div>
+    <!-- Buy Button -->
+    <mat-card-actions>
+      <button
+        class="buy-button"
+        (click)="addToCart(product.id, selectedQuantity)"
+      >
+        Add to Cart
+      </button>
+      <button
+        class="buy-button1"
+        (click)="buynow(product.id, selectedQuantity)"
+      >
+        Buy Now
+      </button>
+    </mat-card-actions>
+    <hr />
+    <h3 class="heading"><mat-icon>description</mat-icon> Description</h3>
+    <div class="description">{{ product.description }}</div>
+  </div>
+</div>
+<div class="related-products">
+  <div class="related-heading"><h1>Releated Products</h1></div>
+  <div class="product-list">
+    <mat-card
+      class="product-card"
+      *ngFor="let product of products.slice(0, 6)"
+      [routerLink]="['/productDetails', product.id]"
+    >
+      <!-- Product Image -->
+      <img
+        mat-card-image
+        [src]="'http://localhost:3000/' + product.image"
+        alt="Product Image"
+        class="product-image1"
+      />
+
+      <mat-card-content class="example-content">
+        <!-- Product Name -->
+        <h3 mat-card-title class="product-name">
+          {{ product.product_name }}
+        </h3>
+        <!-- Product Price -->
+        <p class="product-price">
+          ₹ {{ product.actual_price }}
+          <span class="original-price">{{ product.price }}</span>
+        </p>
+      </mat-card-content>
+      <!-- Buy Button -->
+      <button
+        class="buy-button2"
+        (click)="addToCart(product.id, product.quantity)"
+      >
+        Add to Cart
+      </button>
+    </mat-card>
+  </div>
+</div>

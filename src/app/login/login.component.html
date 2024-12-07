@@ -1,0 +1,49 @@
+<div>
+  <!-- <h3>Please login to Continue</h3> -->
+
+  <div class="form-container sign-in-container">
+    <form (ngSubmit)="onSubmit()">
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+      </div>
+      <span>or use your account</span>
+      <input
+        type="text"
+        placeholder="Email"
+        id="usernameOremail_id"
+        [(ngModel)]="loginData.usernameOremail_id"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        [(ngModel)]="loginData.password"
+        [ngModelOptions]="{ standalone: true }"
+        required
+      />
+      <a href="#">Forgot your password?</a>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button
+          class="ghost"
+          id="signUp"
+          type="button"
+          (click)="goToSignupPage()"
+        >
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

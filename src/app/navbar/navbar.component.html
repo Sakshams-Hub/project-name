@@ -1,0 +1,33 @@
+<mat-toolbar class="example-toolbar">
+  <h1 class="logo" (click)="home()">Monar Writing Instruments</h1>
+  <div class="navbar-center">
+    <button mat-button (click)="home()">Home</button>
+    <button mat-button (click)="products()">Products</button>
+    <button mat-button (click)="cart()">Cart</button>
+    <button mat-button (click)="contactus()">Contact Us</button>
+    <button mat-button (click)="aboutus()">About US</button>
+  </div>
+  <div class="navbar-right">
+    <button mat-icon-button id="searchBtn" (click)="toggleSearch()">
+      <mat-icon>search</mat-icon>
+    </button>
+    <mat-form-field
+      appearance="outline"
+      class="search-field"
+      *ngIf="searchVisible"
+    >
+      <input matInput placeholder="Search" class="search-input" />
+    </mat-form-field>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+  <mat-menu #menu="matMenu" class="dropdown">
+    <button mat-menu-item *ngIf="!isLoggedIn" (click)="login()">
+      Login <mat-icon>login</mat-icon>
+    </button>
+    <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">
+      Logout<mat-icon>logout</mat-icon>
+    </button>
+  </mat-menu>
+</mat-toolbar>

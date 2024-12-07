@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="head">Shopping Cart</div>
+<div class="shopping-cart">
+  <div class="column-labels">
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+  <div class="product" *ngFor="let item of cartItems">
+    <div class="product-details">
+      <div class="product-title">{{ item.product_name }}</div>
+    </div>
+    <div class="product-price">{{ item.actual_price }}</div>
+    <div class="quantity-selector">
+      <div class="quantity-button" (click)="decreaseQuantity(item)">
+        <mat-icon>remove</mat-icon>
+      </div>
+      <div class="quantity-value">{{ item.quantity }}</div>
+      <div class="quantity-button" (click)="increaseQuantity(item)">
+        <mat-icon>add</mat-icon>
+      </div>
+    </div>
+    <div class="product-removal">
+      <button class="remove-product" (click)="removeFromCart(item.product_id)">
+        Remove
+      </button>
+    </div>
+    <div class="product-line-price">{{ calculateItemTotal(item) }}</div>
+  </div>
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">{{ getTotal() }}</div>
+    </div>
+  </div>
+
+  <button class="checkout" *ngIf="cartItems.length > 0" (click)="checkout()">
+    Checkout
+  </button>
+</div>

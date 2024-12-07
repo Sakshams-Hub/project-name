@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+  <div class="left">
+    <h1 class="title">Bill Details</h1>
+    <div class="form">
+      <form action="#" #billForm="ngForm" (ngSubmit)="submit(billForm)">
+        <label for="pname">Name</label>
+        <input
+          type="text"
+          id="pname"
+          name="Name"
+          placeholder="Name.."
+          ngModel
+          required
+        />
+
+        <label for="description">Address</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Address"
+          style="height: 200px"
+          ngModel
+          required
+        ></textarea>
+
+        <label for="quantity">Email Address</label>
+        <input
+          type="email"
+          id="quantity"
+          name="quantity"
+          placeholder="Email id"
+          ngModel
+          required
+        />
+
+        <label for="price">Phone number</label>
+
+        <input
+          type="text"
+          id="price"
+          name="price"
+          placeholder="Phone number"
+          ngModel
+          required
+        />
+
+        <label for="actual_price">Pin code</label>
+        <input
+          type="text"
+          id="actual_price"
+          name="actual_price"
+          placeholder="Pin code"
+          ngModel
+          required
+        />
+
+        <label for="actual_price">City</label>
+        <input
+          type="text"
+          id="actual_price"
+          name="actual_price"
+          placeholder="City"
+          ngModel
+          required
+        />
+
+        <label for="actual_price">State</label>
+        <input
+          type="text"
+          id="actual_price"
+          name="actual_price"
+          placeholder="State"
+          ngModel
+          required
+        />
+
+        <button mat-raised-button class="btns" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="cart">
+      <h4><mat-icon>shopping_cart</mat-icon> Cart Summary</h4>
+      <div class="cartSummary" *ngFor="let item of cartItems">
+        <div class="cartItem">
+          <p>{{ item.quantity }} X {{ item.product_name }}</p>
+          <p class="price">₹{{ item.actual_price }}.00</p>
+        </div>
+      </div>
+      <hr />
+      <p>Total: ₹ {{ getTotal() }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="totalButton">
+  <button mat-raised-button class="btn" (click)="buynow()">Place Order</button>
+</div>

@@ -1,0 +1,194 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="banner">
+    <h1 class="h1">Welcome {{ username }}</h1>
+    <h2 class="h2">Discover the<br />Finest Writing Tools</h2>
+    <p class="p">
+      We offers a curated selection of exquisite pens from around the world to
+      enhance your writing experience. Explore our luxury collections and find
+      the perfect pen that reflects your style and meets your needs.
+    </p>
+  </div>
+  <div class="image"></div>
+</div>
+
+<div class="products">
+  <div class="heading">
+    <p>PRODUCTS</p>
+  </div>
+  <div class="product-list">
+    <div
+      *ngFor="let product of products.slice(4, 10)"
+      [routerLink]="['/productDetails', product.id]"
+      class="product"
+    >
+      <img
+        [src]="'http://localhost:3000/' + product.image"
+        alt="Product Image"
+        width="100%"
+        height="100%"
+      />
+      <div class="product-name">{{ product.product_name }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="container1">
+  <div class="banner1">
+    <h1 class="h1-1">Our Features</h1>
+    <p class="p-1">
+      Our signature collection showcases meticulously crafted pieces, each with
+      a story to tell. Experience the ultimate in writing luxury.
+    </p>
+    <div class="features1">
+      <div class="feature-1">
+        <mat-icon>airplane_ticket</mat-icon>
+        <div class="text">
+          <h2>Diverse Range</h2>
+          <p>
+            From fountain pens to rollerballs, find the perfect match for your
+            writing style.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-2">
+        <mat-icon>10k</mat-icon>
+        <div class="text">
+          <h2>Custom Engraving</h2>
+          <p>
+            Personalize your pen with precision engraving for that special
+            touch.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-3">
+        <mat-icon>fast_forward</mat-icon>
+        <div class="text">
+          <h2>Express Shipping</h2>
+          <p>
+            Speedy delivery across the globe, ensuring your selection arrives
+            posthaste.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="image-1"></div>
+</div>
+
+<div class="achivement">
+  <div class="achive">
+    <h1>By the Numbers</h1>
+    <h4>
+      Proudly reflecting on our achievements and milestones with a commitment to
+      excellence.
+    </h4>
+  </div>
+  <div class="achi">
+    <div class="achi1">
+      <h1>50000</h1>
+      <p>Pens Sold</p>
+    </div>
+    <div class="achi1">
+      <h1>97%</h1>
+      <p>Positive Reviews</p>
+    </div>
+    <div class="achi1">
+      <h1>2000</h1>
+      <p>Happy Clients</p>
+    </div>
+    <div class="achi1">
+      <h1>15</h1>
+      <p>States Served</p>
+    </div>
+  </div>
+</div>
+
+<div class="choose">
+  <div class="why">
+    <h1>Why Choose Us</h1>
+    <h4>
+      From timeless classics to modern designs, our diverse selection meets all
+      writing needs.
+    </h4>
+  </div>
+  <div class="features">
+    <div class="feature1">
+      <mat-icon>bolt</mat-icon>
+      <h1>Fast Shipping</h1>
+      <p>
+        Expect quick, reliable delivery nationwide, ensuring that your writing
+        essentials are at your doorstep when you need them.
+      </p>
+    </div>
+    <div class="feature1">
+      <mat-icon>bolt</mat-icon>
+      <h1>Quality Ink</h1>
+      <p>
+        Premium ink selections that promise vibrant colors and long-lasting
+        performance for an unparalleled writing journey.
+      </p>
+    </div>
+    <div class="feature1">
+      <mat-icon>bolt</mat-icon>
+      <h1>Support 24/7</h1>
+      <p>
+        Our dedicated team is here around the clock to help you choose the
+        perfect pen and resolve any inquiries.
+      </p>
+    </div>
+    <div class="feature1">
+      <mat-icon>bolt</mat-icon>
+      <h1>Tech Integration</h1>
+      <p>
+        Blending classic pen design with modern technology, our smart pens
+        elevate the writing experience to the digital age.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="faq">
+  <div class="head">
+    <h1>Frequently Asked Questions</h1>
+    <p>
+      Get answers to our customer's most common inquiries about pen selection,
+      order processing, and our exclusive services.
+    </p>
+  </div>
+  <div class="content">
+    <div class="q1">
+      <h2>What pen types do you offer?</h2>
+      <p>
+        Our range spans from fountain and ballpoint pens to rollerball and
+        calligraphy pens, including limited edition and collectible items.
+      </p>
+    </div>
+    <div class="q2">
+      <h2>What pen types do you offer?</h2>
+      <p>
+        Our range spans from fountain and ballpoint pens to rollerball and
+        calligraphy pens, including limited edition and collectible items.
+      </p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="q3">
+      <h2>What pen types do you offer?</h2>
+      <p>
+        Our range spans from fountain and ballpoint pens to rollerball and
+        calligraphy pens, including limited edition and collectible items.
+      </p>
+    </div>
+    <div class="q4">
+      <h2>What pen types do you offer?</h2>
+      <p>
+        Our range spans from fountain and ballpoint pens to rollerball and
+        calligraphy pens, including limited edition and collectible items.
+      </p>
+    </div>
+  </div>
+</div>

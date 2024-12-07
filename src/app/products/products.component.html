@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<h1 class="head">ALL PENS</h1>
+<div class="product-list">
+  <mat-card
+    class="product-card"
+    *ngFor="let product of products"
+    [routerLink]="['/productDetails', product.id]"
+  >
+    <!-- Product Image -->
+    <img
+      mat-card-image
+      [src]="'http://localhost:3000/' + product.image"
+      alt="Product Image"
+      class="product-image"
+    />
+
+    <mat-card-content class="example-content">
+      <!-- Product Name -->
+      <h3 mat-card-title class="product-name">
+        {{ product.product_name }}
+      </h3>
+      <!-- Product Price -->
+      <p class="product-price">
+        ₹ {{ product.actual_price }}
+        <span class="original-price">{{ product.price }}</span>
+      </p>
+    </mat-card-content>
+    <!-- Buy Button -->
+    <button
+      mat-button
+      class="buy-button1"
+      (click)="addToCart(product.id, selectedQuantity)"
+    >
+      Add to Cart
+    </button>
+  </mat-card>
+</div>

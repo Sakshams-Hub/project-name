@@ -1,0 +1,64 @@
+.logo{
+    cursor: pointer;
+}
+
+
+.example-toolbar {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; 
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;// Add padding to the toolbar for spacing\
+    border-bottom: 2px solid black;
+}
+    .navbar-center {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: black;
+    }
+    .navbar-center button{
+        color: black;
+    }
+
+    .navbar-right {
+        display: flex;
+        align-items: center;
+        
+    }
+
+   .example-toolbar .navbar-right .search-field {
+       min-width: 150px;
+       /* Set a minimum width for the search field */
+       margin-right: 5px;
+       /* Reduce the gap between the search icon and the search field */
+   }
+
+    .search-input {
+        font-size: 14px; // Adjust the font size of the input
+        color: #333; // Set text color
+        border-color: none; // Set border color
+        border-radius: 2px; // Apply border-radius
+        background-color: white; // Set background color
+        padding: 8px 12px; // Adjust padding
+        box-sizing: border-box; // Include padding in the width
+        width: 100%;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #a5a5a5;
+       
+         // Ensure the input occupies full width
+    }
+
+    .icon-button {
+        color: rgb(255, 255, 255); 
+        margin-left: 5px;// Set icon color
+    }
+
+
